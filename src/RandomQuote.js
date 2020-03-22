@@ -1,6 +1,10 @@
 import React, { Component, Fragment } from 'react';
 
 class RandomQuote extends Component {
+  getRandomQuote = () => {
+    console.log('clicking');
+  };
+
   render() {
     return (
       <Fragment>
@@ -26,7 +30,11 @@ class RandomQuote extends Component {
               <a href='#!' className='button' id='tumblr-quote' target='_blank'>
                 <i className='fa fa-tumblr'></i>
               </a>
-              <button className='button' id='new-quote'>
+              <button
+                className='button'
+                id='new-quote'
+                onClick={this.getRandomQuote}
+              >
                 New quote
               </button>
             </div>
