@@ -1,4 +1,4 @@
-import React, { compoonent, fragment, Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 
 class RandomQuote extends Component {
   render() {
