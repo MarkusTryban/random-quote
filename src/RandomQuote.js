@@ -3,14 +3,20 @@ import React, { Component, Fragment } from 'react';
 class RandomQuote extends Component {
   constructor() {
     super();
+    this.state = {
+      quote: {
+        content: '',
+        title: '',
+      },
+    };
     this.GET_QUOTE =
       'https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand';
   }
 
   getRandomQuote = () => {
     fetch(this.GET_QUOTE)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
       });
   };
