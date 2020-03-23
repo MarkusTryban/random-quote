@@ -8,6 +8,7 @@ class RandomQuote extends Component {
         content: '',
         title: '',
       },
+      hasQuote: false,
     };
     this.GET_QUOTE =
       'https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand';
@@ -17,11 +18,20 @@ class RandomQuote extends Component {
     fetch(this.GET_QUOTE)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        if (data[0].content && data[0].title) {
+          let { quote } = this.state;
+          let quoteData = data[0];
+          quote.content = quoteData.content;
+          quote.title = quoteData.title;
+        } else {
+          return console.error('No quote found');
+        }
       });
   };
 
   render() {
+    const { hasQuote } = this.state;
+
     return (
       <Fragment>
         <div id='wrapper'>
