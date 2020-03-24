@@ -23,6 +23,11 @@ class RandomQuote extends Component {
           let quoteData = data[0];
           quote.content = quoteData.content;
           quote.title = quoteData.title;
+          this.setState({ quote }, () => {
+            if (this.state.hasQuote === false) {
+              this.setState({ hasQuote: true });
+            }
+          });
         } else {
           return console.error('No quote found');
         }
@@ -30,7 +35,7 @@ class RandomQuote extends Component {
   };
 
   render() {
-    const { hasQuote } = this.state;
+    const { hasQuote, quote } = this.state;
 
     return (
       <Fragment>
@@ -38,7 +43,9 @@ class RandomQuote extends Component {
           <div id='quote-box'>
             <div className='quote-text'>
               <i className='fa fa-quote-left'></i>
-              <span id='text'></span>
+              <span id='text'>
+                {hasQuote === true ? JSON.stringify(quote) : 'No quote found'}
+              </span>
             </div>
             <div className='quote-author'>
               <span id='author'></span>
