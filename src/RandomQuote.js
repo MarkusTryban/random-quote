@@ -18,13 +18,11 @@ class RandomQuote extends Component {
     fetch(this.GET_QUOTE)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data[0]);
+        console.log(data[Math.floor(Math.random() * data.length)]);
       });
   };
 
   render() {
-    const { hasQuote, quote } = this.state;
-
     return (
       <Fragment>
         <div id='wrapper'>
