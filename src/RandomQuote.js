@@ -8,7 +8,6 @@ class RandomQuote extends Component {
         content: '',
         title: '',
       },
-      hasQuote: false,
     };
     this.GET_QUOTE =
       'https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand';
@@ -18,8 +17,15 @@ class RandomQuote extends Component {
     fetch(this.GET_QUOTE)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data[Math.floor(Math.random() * data.length)]);
+        return data[Math.floor(Math.random() * data.length)];
       });
+  };
+
+  getQuote = () => {
+    let randomQuote = getRandomQuote();
+
+    currentQuote = randomQuote.content;
+    currentAuthor = randomQuote.title;
   };
 
   render() {
