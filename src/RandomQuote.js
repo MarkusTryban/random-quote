@@ -17,16 +17,13 @@ class RandomQuote extends Component {
     fetch(this.GET_QUOTE)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data[Math.floor(Math.random() * data.length)].content);
+        // console.log(data);
+
+        const obj = data[Math.floor(Math.random() * data.length)];
+
+        console.log(obj);
       });
   };
-
-  // getQuote = () => {
-  //   let randomQuote = getRandomQuote();
-
-  //   currentQuote = randomQuote.content;
-  //   currentAuthor = randomQuote.title;
-  // };
 
   render() {
     return (
@@ -35,10 +32,10 @@ class RandomQuote extends Component {
           <div id='quote-box'>
             <div className='quote-text'>
               <i className='fa fa-quote-left'></i>
-              <span id='text'></span>
+              <span id='text'>Quote Text</span>
             </div>
             <div className='quote-author'>
-              <span id='author'></span>
+              <span id='author'>- Author Name</span>
             </div>
             <div className='buttons'>
               <a
