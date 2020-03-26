@@ -7,7 +7,9 @@ class RandomQuote extends Component {
       quote: {
         content: '',
         title: '',
+        link: '',
       },
+      hasQuote: false,
     };
     this.GET_QUOTE =
       'https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand';
@@ -16,56 +18,47 @@ class RandomQuote extends Component {
   getRandomQuote = () => {
     fetch(this.GET_QUOTE)
       .then((res) => res.json())
-      .then((data) => {
-        // console.log(data);
-
-        const obj = data[Math.floor(Math.random() * data.length)];
-
-        console.log(obj);
+      .then((result) => {
+        if (result[0].content && result[0].title && result[0].link) {
+          let { quote } = this.state;
+          let quoteData = result[0];
+          quote.content = quoteData.content;
+          quote.title = quoteData.title;
+          quote.link = quoteData.link;
+          this.setState({ quote }, () => {
+            if (this.state.hasQuote === false) {
+              this.setState({ hasQuote: true });
+            }
+          });
+        } else {
+          return console.error('No Quote Found');
+        }
+        // result[Math.floor(Math.random() * result.length)],
       });
   };
 
+  renderQuote = () => {
+    const { content, title } = this.state.quote;
+
+    return (
+      <div>
+        <h1>{title}</h1>
+        <p>{content}</p>
+      </div>
+    );
+  };
+
   render() {
+    const { hasQuote } = this.state;
+
     return (
       <Fragment>
-        <div id='wrapper'>
-          <div id='quote-box'>
-            <div className='quote-text'>
-              <i className='fa fa-quote-left'></i>
-              <span id='text'>Quote Text</span>
-            </div>
-            <div className='quote-author'>
-              <span id='author'>- Author Name</span>
-            </div>
-            <div className='buttons'>
-              <a
-                href='#!'
-                className='button'
-                id='tweet-quote'
-                title='Tweet this quote!'
-                target='_blank'
-              >
-                <i className='fa fa-twitter'></i>
-              </a>
-              <a href='#!' className='button' id='tumblr-quote' target='_blank'>
-                <i className='fa fa-tumblr'></i>
-              </a>
-              <button
-                className='button'
-                id='new-quote'
-                onClick={this.getRandomQuote}
-              >
-                New quote
-              </button>
-            </div>
-          </div>
-          <div className='footer'>
-            by <a href='https://github.com/MarkusTryban'>Markus Tryban</a>
-          </div>
-        </div>
+        <h1>Random Quote</h1>
+        <button onClick={this.getRandomQuote}>New Quote</button>
+        <br />
+        {hasQuote === true ? this.renderQuote() : 'No Quote'}
       </Fragment>
     );
   }
 }
-
 export default RandomQuote;
