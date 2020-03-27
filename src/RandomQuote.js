@@ -26,16 +26,17 @@ class RandomQuote extends Component {
 
     return (
       <Fragment>
-        <h1>Random Quote</h1>
-        <button onClick={this.getRandomQuote}>New Quote</button>
-        <br />
-        <ul>
-          {quoteData.map((data) => (
-            <li>
-              {data.content} {data.title}
-            </li>
-          ))}
-        </ul>
+        <div>
+          <h1>Random Quote</h1>
+          <button onClick={this.getRandomQuote}>New Quote</button>
+          <br />
+
+          <ul>
+            {quoteData.map((data) => (
+              <h1 key={data.quote}>{data.content.rendered}</h1>
+            ))}
+          </ul>
+        </div>
       </Fragment>
     );
   }
