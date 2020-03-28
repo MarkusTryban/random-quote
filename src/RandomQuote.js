@@ -20,20 +20,42 @@ class RandomQuote extends Component {
   };
 
   render() {
-    const { quoteData } = this.state;
-
     return (
       <Fragment>
-        <div>
-          <h1>Random Quote</h1>
-          <button onClick={this.getRandomQuote}>New Quote</button>
-          <br />
-
-          <ul>
-            {quoteData.map((data) => (
-              <li key={data.quote}>{data.quote}</li>
-            ))}
-          </ul>
+        <div id='wrapper'>
+          <div id='quote-box'>
+            <div className='quote-text'>
+              <i className='fa fa-quote-left'></i>
+              <span id='text'>Quote Text</span>
+            </div>
+            <div className='quote-author'>
+              <span id='author'>- Author Name</span>
+            </div>
+            <div className='buttons'>
+              <a
+                href='#!'
+                className='button'
+                id='tweet-quote'
+                title='Tweet this quote!'
+                target='_blank'
+              >
+                <i className='fa fa-twitter'></i>
+              </a>
+              <a href='#!' className='button' id='tumblr-quote' target='_blank'>
+                <i className='fa fa-tumblr'></i>
+              </a>
+              <button
+                className='button'
+                id='new-quote'
+                onClick={this.getRandomQuote}
+              >
+                New quote
+              </button>
+            </div>
+          </div>
+          <div className='footer'>
+            by <a href='https://github.com/MarkusTryban'>Markus Tryban</a>
+          </div>
         </div>
       </Fragment>
     );
