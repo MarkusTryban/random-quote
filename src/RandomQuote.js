@@ -20,16 +20,26 @@ class RandomQuote extends Component {
   };
 
   render() {
+    const { quoteData } = this.state;
+
     return (
       <Fragment>
         <div id='wrapper'>
           <div id='quote-box'>
             <div className='quote-text'>
               <i className='fa fa-quote-left'></i>
-              <span id='text'>Quote Text</span>
+              {quoteData.map((data) => (
+                <span id='text' key={data.quote}>
+                  {data.quote}
+                </span>
+              ))}
             </div>
             <div className='quote-author'>
-              <span id='author'>- Author Name</span>
+              {quoteData.map((data) => (
+                <span id='author' key={data.character}>
+                  - {data.character}
+                </span>
+              ))}
             </div>
             <div className='buttons'>
               <a
