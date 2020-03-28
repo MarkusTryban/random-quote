@@ -97,6 +97,14 @@ button:hover {
   width: 40px;
 }
 
+#tweet-quote:hover {
+  opacity: 0.9;
+}
+
+#tumblr-quote:hover {
+  opacity: 0.9;
+}
+
 #new-quote {
   float: right;
 }
