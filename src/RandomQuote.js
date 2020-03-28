@@ -14,9 +14,8 @@ class RandomQuote extends Component {
       .then((res) => res.json())
       .then((result) => {
         this.setState({
-          quoteData: console.log(result),
+          quoteData: result,
         });
-        // result[Math.floor(Math.random() * result.length)],
       });
   };
 
@@ -30,11 +29,11 @@ class RandomQuote extends Component {
           <button onClick={this.getRandomQuote}>New Quote</button>
           <br />
 
-          {/* <ul>
+          <ul>
             {quoteData.map((data) => (
-              <h1 key={data.quote}>{data.content.rendered}</h1>
+              <li key={data.quote}>{data.quote}</li>
             ))}
-          </ul> */}
+          </ul>
         </div>
       </Fragment>
     );
