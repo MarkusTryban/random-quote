@@ -1,3 +1,3 @@
-import getRandomQuote from './RandomQuote';
-
-getRandomQuote();
+document.addEventListener('DOMContentLoaded', (event) => {
+  getRandomQuote();
+});
