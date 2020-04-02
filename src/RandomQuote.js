@@ -30,6 +30,10 @@ class RandomQuote extends Component {
     return color;
   };
 
+  randomColor = () => {
+    document.getElementById();
+  };
+
   render() {
     const { quoteData } = this.state;
 
@@ -66,6 +70,7 @@ class RandomQuote extends Component {
                 <i className='fa fa-tumblr'></i>
               </a>
               <button
+                id='button'
                 className='button'
                 id='new-quote'
                 onClick={this.getRandomQuote}
