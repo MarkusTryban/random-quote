@@ -32,8 +32,8 @@ class RandomQuote extends Component {
 
   randomColor = () => {
     document.getElementById(
-      'button'
-    ).style.backgroundColor = this.getRandomColor;
+      'new-quote'
+    ).style.backgroundColor = document.body.style.backgroundColor = this.getRandomColor;
   };
 
   render() {
@@ -72,7 +72,6 @@ class RandomQuote extends Component {
                 <i className='fa fa-tumblr'></i>
               </a>
               <button
-                id='button'
                 className='button'
                 id='new-quote'
                 onClick={this.getRandomQuote}
