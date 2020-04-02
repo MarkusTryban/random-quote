@@ -75,7 +75,10 @@ class RandomQuote extends Component {
             </div>
           </div>
           <div className='footer'>
-            by <a href='https://github.com/MarkusTryban'>Markus Tryban</a>
+            by{' '}
+            <a href='https://markustryban.com' target='_blank'>
+              Markus Tryban
+            </a>
           </div>
         </div>
       </Fragment>
