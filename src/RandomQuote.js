@@ -19,6 +19,17 @@ class RandomQuote extends Component {
       });
   };
 
+  getRandomColor = () => {
+    const randomLetters = '0123456789A';
+    const color = '#';
+
+    for (let i = 0; i < 6; i++) {
+      color += randomLetters[Math.floor(Math.random() * randomLetters.length)];
+    }
+
+    return color;
+  };
+
   render() {
     const { quoteData } = this.state;
 
