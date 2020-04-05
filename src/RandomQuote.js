@@ -66,10 +66,10 @@ class RandomQuote extends Component {
                 title='Tweet this quote!'
                 target='_blank'
               >
-                <i className='fa fa-twitter'></i>
+                <i className='fab fa-twitter'></i>
               </a>
               <a href='#!' className='button' id='tumblr-quote' target='_blank'>
-                <i className='fa fa-tumblr'></i>
+                <i className='fab fa-tumblr'></i>
               </a>
               <button
                 className='button'
