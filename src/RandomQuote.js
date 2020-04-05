@@ -33,8 +33,7 @@ class RandomQuote extends Component {
   randomColor = () => {
     document.getElementById(
       'new-quote'
-    ).style.backgroundColor = document.body.style.backgroundColor = document.body.style.color =
-      'blue';
+    ).style.backgroundColor = document.body.style.backgroundColor = document.body.style.color = this.getRandomColor();
   };
 
   render() {
