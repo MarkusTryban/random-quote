@@ -74,7 +74,10 @@ class RandomQuote extends Component {
               <button
                 className='button'
                 id='new-quote'
-                onClick={this.getRandomQuote}
+                onClick={() => {
+                  this.getRandomQuote();
+                  this.randomColor();
+                }}
               >
                 New quote
               </button>
