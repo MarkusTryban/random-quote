@@ -85,7 +85,7 @@ class RandomQuote extends Component {
                   this.randomColor();
                 }}
               >
-                New quote
+                New Quote
               </button>
             </div>
           </div>
