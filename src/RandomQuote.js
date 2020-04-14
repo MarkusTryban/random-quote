@@ -31,9 +31,9 @@ class RandomQuote extends Component {
   };
 
   randomColor = () => {
-    const styleButtonColor = document.querySelectorAll('.button');
+    const updateStyleColor = document.querySelectorAll('.button');
 
-    Array.from(styleButtonColor).forEach((button) => {
+    Array.from(updateStyleColor).forEach((button) => {
       return (button.style.backgroundColor = document.body.style.backgroundColor = document.body.style.color = this.getRandomColor());
     });
   };
