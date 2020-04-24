@@ -71,7 +71,7 @@ class RandomQuote extends Component {
                 <i className='fab fa-twitter'></i>
               </a>
               <a
-                href='#!'
+                href='https://www.tumblr.com/login'
                 className='button'
                 id='tumblr-quote'
                 title='Post this quote on tumblr!'
