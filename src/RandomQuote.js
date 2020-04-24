@@ -62,7 +62,7 @@ class RandomQuote extends Component {
             </div>
             <div className='buttons'>
               <a
-                href='#!'
+                href='https://twitter.com/intent/tweet'
                 className='button'
                 id='tweet-quote'
                 title='Tweet this quote!'
