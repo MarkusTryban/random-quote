@@ -9,6 +9,11 @@ class RandomQuote extends Component {
     this.GET_QUOTE = 'https://thesimpsonsquoteapi.glitch.me/quotes';
   }
 
+  componentDidMount() {
+    // this.getRandomQuote();
+    this.randomColor();
+  }
+
   getRandomQuote = () => {
     fetch(this.GET_QUOTE)
       .then((res) => res.json())
@@ -37,11 +42,6 @@ class RandomQuote extends Component {
       return (button.style.backgroundColor = document.body.style.backgroundColor = document.body.style.color = this.getRandomColor());
     });
   };
-
-  componentDidMount() {
-    this.getRandomQuote();
-    this.randomColor();
-  }
 
   render() {
     const { quoteData } = this.state;
@@ -88,7 +88,7 @@ class RandomQuote extends Component {
                 className='button'
                 id='new-quote'
                 onClick={() => {
-                  this.getRandomQuote();
+                  // this.getRandomQuote();
                   this.randomColor();
                 }}
               >
