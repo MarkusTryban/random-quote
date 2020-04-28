@@ -73,6 +73,7 @@ class RandomQuote extends Component {
                 id='tweet-quote'
                 title='Tweet this quote!'
                 target='_blank'
+                rel='noopener noreferrer'
               >
                 <i className='fab fa-twitter'></i>
               </a>
@@ -82,6 +83,7 @@ class RandomQuote extends Component {
                 id='tumblr-quote'
                 title='Post this quote on tumblr!'
                 target='_blank'
+                rel='noopener noreferrer'
               >
                 <i className='fab fa-tumblr'></i>
               </a>
@@ -99,7 +101,11 @@ class RandomQuote extends Component {
           </div>
           <div className='footer'>
             by{' '}
-            <a href='https://markustryban.com' target='_blank'>
+            <a
+              href='https://markustryban.com'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               Markus Tryban
             </a>
           </div>
