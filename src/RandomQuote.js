@@ -10,7 +10,7 @@ class RandomQuote extends Component {
   }
 
   componentDidMount() {
-    // this.getRandomQuote();
+    this.getRandomQuote();
     this.randomColor();
   }
 
@@ -91,7 +91,7 @@ class RandomQuote extends Component {
                 className='button'
                 id='new-quote'
                 onClick={() => {
-                  // this.getRandomQuote();
+                  this.getRandomQuote();
                   this.randomColor();
                 }}
               >
