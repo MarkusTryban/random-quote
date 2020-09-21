@@ -5,10 +5,6 @@ import './RandomQuote.css';
 const RandomQuote = () => {
   const [quoteData, setQuoteData] = useState([]);
 
-  useEffect(() => {
-    getRandomQuote();
-  }, []);
-
   const getRandomQuote = () => {
     fetch('https://thesimpsonsquoteapi.glitch.me/quotes')
       .then((res) => {
@@ -21,6 +17,10 @@ const RandomQuote = () => {
         setQuoteData(result);
       });
   };
+
+  useEffect(() => {
+    getRandomQuote();
+  }, []);
 
   const randomColor = () => {
     const randomChars = '0123456789A';
