@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 
+import './RandomQuote.css';
+
 class RandomQuote extends Component {
   constructor() {
     super();
