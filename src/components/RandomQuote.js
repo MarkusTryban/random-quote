@@ -26,7 +26,7 @@ const RandomQuote = () => {
     const randomChars = '0123456789A';
     let color = '#';
 
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 6; i += 1) {
       color += randomChars[Math.floor(Math.random() * randomChars.length)];
     }
 
@@ -35,7 +35,7 @@ const RandomQuote = () => {
 
   const getRandomColor = () => {
     const colorVal = randomColor();
-    const updateStyleColor = document.querySelectorAll<HTMLElement>('.button');
+    const updateStyleColor = document.querySelectorAll('.button');
 
     Array.from(updateStyleColor).map((button) => {
       return (button.style.backgroundColor = document.body.style.backgroundColor = document.body.style.color = colorVal);
