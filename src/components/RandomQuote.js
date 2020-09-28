@@ -82,6 +82,7 @@ const RandomQuote = () => {
             <i className='fab fa-tumblr' />
           </a>
           <button
+            type='button'
             className='button'
             id='new-quote'
             onClick={() => {
